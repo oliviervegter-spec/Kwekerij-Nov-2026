@@ -303,8 +303,8 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
     <a class="mark" href="#top">Historisch Fruit, <i>Nieuw Leven</i></a>
     <nav class="main" aria-label="Hoofdmenu">
       <a href="#missie">Missie</a>
-      <a href="#rassen">Rassen</a>
       <a href="#stamvorm">Halfstam &amp; laagstam</a>
+      <a href="#rassen">Rassen</a>
       <a href="#ophalen">Ophalen</a>
       <a href="#uitleg">Uitleg</a>
       <a href="#contact">Contact</a>
@@ -371,40 +371,6 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
         <div><h3>Puur gekweekt</h3><p>Geen bestrijdingsmiddelen, geen kunstmest. Elke boom is met de hand geënt in Peize, onder de rook van Groningen.</p></div>
         <div><h3>Goed voor tuin en natuur</h3><p>Bloesem voor bijen in het voorjaar, onbespoten fruit over een paar jaar. Zo draagt elke boom bij aan de biodiversiteit in je tuin.</p></div>
       </div>
-    </div>
-  </section>
-
-  <section id="rassen">
-    <div class="wrap">
-      <span class="eyebrow">Assortiment 2026 – 2027</span>
-      <h2>De rassen</h2>
-      <p class="lead" style="margin-top:14px">Elk ras met zijn herkomst, smaak, een pluk- en eetkalender en de stamvormen waarin hij te krijgen is. Zet bomen op je lijst en stuur ze in één keer mee met je aanvraag.</p>
-
-      <div class="toolbar">
-        <div class="chips" role="group" aria-label="Filter">
-          <button class="chip" data-f="alle" aria-pressed="true">Alle</button>
-          <button class="chip" data-f="appel" aria-pressed="false">Appels</button>
-          <button class="chip" data-f="peer" aria-pressed="false">Peren</button>
-          <button class="chip" data-f="halfstam" aria-pressed="false">Halfstam</button>
-          <button class="chip" data-f="laagstam" aria-pressed="false">Laagstam</button>
-          <button class="chip" data-f="noord" aria-pressed="false">Streekras uit het Noorden</button>
-        </div>
-        <label class="sort" for="sortSel">Sorteer
-          <select id="sortSel">
-            <option value="naam">op naam</option>
-            <option value="pluk">op pluktijd</option>
-            <option value="bewaar">op bewaartijd</option>
-          </select>
-        </label>
-      </div>
-      <div class="legend"><span><i class="d"></i>plukrijp</span><span><i class="b"></i>eettijd</span></div>
-      <div class="grid" id="grid"></div>
-      <p class="empty" id="empty" hidden>Geen rassen bij dit filter.</p>
-      <div class="pollinate">
-        <h3>Bestuiving</h3>
-        <p>De meeste appel- en perenrassen dragen pas goed vrucht als er een ander ras van dezelfde soort in de buurt bloeit. Staan er bij jou of de buren geen andere appel- of perenbomen, kies dan twee verschillende rassen. Zoete Winterkroon en Bloemzoete zijn zelfbestuivend. Bramley’s Seedling is triploïde: hij bestuift zelf slecht en heeft twee andere rassen in de buurt nodig. Twijfel je? Vraag het gerust, dan denk ik mee.</p>
-      </div>
-      <p class="source">De rasbeschrijvingen zijn gebaseerd op <i>Oude fruitrassen in Noord-Nederland</i> van de Noordelijke Pomologische Vereniging (8e druk, 2010).</p>
     </div>
   </section>
 
@@ -482,6 +448,40 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
           </dl>
         </article>
       </div>
+    </div>
+  </section>
+
+  <section id="rassen">
+    <div class="wrap">
+      <span class="eyebrow">Assortiment 2026 – 2027</span>
+      <h2>De rassen</h2>
+      <p class="lead" style="margin-top:14px">Elk ras met zijn herkomst, smaak, een pluk- en eetkalender en de stamvormen waarin hij te krijgen is. Zet bomen op je lijst en stuur ze in één keer mee met je aanvraag.</p>
+
+      <div class="toolbar">
+        <div class="chips" role="group" aria-label="Filter">
+          <button class="chip" data-f="alle" aria-pressed="true">Alle</button>
+          <button class="chip" data-f="appel" aria-pressed="false">Appels</button>
+          <button class="chip" data-f="peer" aria-pressed="false">Peren</button>
+          <button class="chip" data-f="halfstam" aria-pressed="false">Halfstam</button>
+          <button class="chip" data-f="laagstam" aria-pressed="false">Laagstam</button>
+          <button class="chip" data-f="noord" aria-pressed="false">Streekras uit het Noorden</button>
+        </div>
+        <label class="sort" for="sortSel">Sorteer
+          <select id="sortSel">
+            <option value="naam">op naam</option>
+            <option value="pluk">op pluktijd</option>
+            <option value="bewaar">op bewaartijd</option>
+          </select>
+        </label>
+      </div>
+      <div class="legend"><span><i class="d"></i>plukrijp</span><span><i class="b"></i>eettijd</span></div>
+      <div class="grid" id="grid"></div>
+      <p class="empty" id="empty" hidden>Geen rassen bij dit filter.</p>
+      <div class="pollinate">
+        <h3>Bestuiving</h3>
+        <p>De meeste appel- en perenrassen dragen pas goed vrucht als er een ander ras van dezelfde soort in de buurt bloeit. Staan er bij jou of de buren geen andere appel- of perenbomen, kies dan twee verschillende rassen. Zoete Winterkroon en Bloemzoete zijn zelfbestuivend. Bramley’s Seedling is triploïde: hij bestuift zelf slecht en heeft twee andere rassen in de buurt nodig. Twijfel je? Vraag het gerust, dan denk ik mee.</p>
+      </div>
+      <p class="source">De rasbeschrijvingen zijn gebaseerd op <i>Oude fruitrassen in Noord-Nederland</i> van de Noordelijke Pomologische Vereniging (8e druk, 2010).</p>
     </div>
   </section>
 
