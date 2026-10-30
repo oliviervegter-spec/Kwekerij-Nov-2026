@@ -70,16 +70,26 @@ section + section{border-top:1px solid var(--line)}
 .btn:hover{transform:translateY(-1px)}
 
 /* header */
-header.site{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
-.mark{font-family:var(--display);font-size:1.3rem;text-decoration:none;line-height:1.1}
+header.site{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);box-shadow:0 6px 18px -14px rgba(0,0,0,.35)}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px 24px;padding-block:16px}
+.mark{font-family:var(--display);font-size:1.45rem;text-decoration:none;line-height:1.1;flex-shrink:0}
 .mark i{color:var(--accent)}
-nav.main{display:flex;gap:4px 18px;flex-wrap:wrap;align-items:center;font-size:.92rem}
-nav.main a{text-decoration:none;color:var(--muted)}
-nav.main a:hover{color:var(--ink)}
-.listlink{font-family:var(--mono);font-size:.8rem;border:1px solid var(--line);border-radius:999px;padding:.3em .8em;color:var(--ink)!important}
-.listlink b{color:var(--accent)}
-@media (max-width:760px){nav.main a:not(.listlink){display:none}}
+nav.main{display:flex;gap:6px;align-items:center;font-size:.98rem;font-weight:500}
+nav.main a{text-decoration:none;color:var(--ink);padding:.45em .8em;border-radius:999px;white-space:nowrap}
+nav.main a:hover{background:color-mix(in srgb,var(--leaf) 14%,transparent)}
+nav.main a.on{background:var(--ink);color:var(--bg)}
+.listlink{font-family:var(--mono);font-size:.85rem;border:1.5px solid var(--accent);color:var(--accent)!important;margin-left:6px}
+.listlink b{color:inherit}
+section{scroll-margin-top:84px}
+@media (max-width:980px){
+  header.site .wrap{flex-wrap:wrap;padding-block:10px 0}
+  nav.main{order:3;width:100%;overflow-x:auto;scrollbar-width:none;padding-bottom:10px;margin-inline:-4px;-webkit-overflow-scrolling:touch}
+  nav.main::-webkit-scrollbar{display:none}
+  nav.main a{font-size:.92rem;padding:.4em .85em;background:var(--paper);border:1px solid var(--line)}
+  nav.main a.on{border-color:var(--ink)}
+  .listlink{margin-left:0}
+  section{scroll-margin-top:118px}
+}
 
 /* hero */
 .hero{padding-block:clamp(48px,7vw,88px) clamp(48px,6vw,72px)}
@@ -364,6 +374,40 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
     </div>
   </section>
 
+  <section id="rassen">
+    <div class="wrap">
+      <span class="eyebrow">Assortiment 2026 – 2027</span>
+      <h2>De rassen</h2>
+      <p class="lead" style="margin-top:14px">Elk ras met zijn herkomst, smaak, een pluk- en eetkalender en de stamvormen waarin hij te krijgen is. Zet bomen op je lijst en stuur ze in één keer mee met je aanvraag.</p>
+
+      <div class="toolbar">
+        <div class="chips" role="group" aria-label="Filter">
+          <button class="chip" data-f="alle" aria-pressed="true">Alle</button>
+          <button class="chip" data-f="appel" aria-pressed="false">Appels</button>
+          <button class="chip" data-f="peer" aria-pressed="false">Peren</button>
+          <button class="chip" data-f="halfstam" aria-pressed="false">Halfstam</button>
+          <button class="chip" data-f="laagstam" aria-pressed="false">Laagstam</button>
+          <button class="chip" data-f="noord" aria-pressed="false">Streekras uit het Noorden</button>
+        </div>
+        <label class="sort" for="sortSel">Sorteer
+          <select id="sortSel">
+            <option value="naam">op naam</option>
+            <option value="pluk">op pluktijd</option>
+            <option value="bewaar">op bewaartijd</option>
+          </select>
+        </label>
+      </div>
+      <div class="legend"><span><i class="d"></i>plukrijp</span><span><i class="b"></i>eettijd</span></div>
+      <div class="grid" id="grid"></div>
+      <p class="empty" id="empty" hidden>Geen rassen bij dit filter.</p>
+      <div class="pollinate">
+        <h3>Bestuiving</h3>
+        <p>De meeste appel- en perenrassen dragen pas goed vrucht als er een ander ras van dezelfde soort in de buurt bloeit. Staan er bij jou of de buren geen andere appel- of perenbomen, kies dan twee verschillende rassen. Zoete Winterkroon en Bloemzoete zijn zelfbestuivend. Bramley’s Seedling is triploïde: hij bestuift zelf slecht en heeft twee andere rassen in de buurt nodig. Twijfel je? Vraag het gerust, dan denk ik mee.</p>
+      </div>
+      <p class="source">De rasbeschrijvingen zijn gebaseerd op <i>Oude fruitrassen in Noord-Nederland</i> van de Noordelijke Pomologische Vereniging (8e druk, 2010).</p>
+    </div>
+  </section>
+
   <section id="stamvorm">
     <div class="wrap">
       <span class="eyebrow">Twee lichtingen</span>
@@ -438,40 +482,6 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
           </dl>
         </article>
       </div>
-    </div>
-  </section>
-
-  <section id="rassen">
-    <div class="wrap">
-      <span class="eyebrow">Assortiment 2026 – 2027</span>
-      <h2>De rassen</h2>
-      <p class="lead" style="margin-top:14px">Elk ras met zijn herkomst, smaak, een pluk- en eetkalender en de stamvormen waarin hij te krijgen is. Zet bomen op je lijst en stuur ze in één keer mee met je aanvraag.</p>
-
-      <div class="toolbar">
-        <div class="chips" role="group" aria-label="Filter">
-          <button class="chip" data-f="alle" aria-pressed="true">Alle</button>
-          <button class="chip" data-f="appel" aria-pressed="false">Appels</button>
-          <button class="chip" data-f="peer" aria-pressed="false">Peren</button>
-          <button class="chip" data-f="halfstam" aria-pressed="false">Halfstam</button>
-          <button class="chip" data-f="laagstam" aria-pressed="false">Laagstam</button>
-          <button class="chip" data-f="noord" aria-pressed="false">Streekras uit het Noorden</button>
-        </div>
-        <label class="sort" for="sortSel">Sorteer
-          <select id="sortSel">
-            <option value="naam">op naam</option>
-            <option value="pluk">op pluktijd</option>
-            <option value="bewaar">op bewaartijd</option>
-          </select>
-        </label>
-      </div>
-      <div class="legend"><span><i class="d"></i>plukrijp</span><span><i class="b"></i>eettijd</span></div>
-      <div class="grid" id="grid"></div>
-      <p class="empty" id="empty" hidden>Geen rassen bij dit filter.</p>
-      <div class="pollinate">
-        <h3>Bestuiving</h3>
-        <p>De meeste appel- en perenrassen dragen pas goed vrucht als er een ander ras van dezelfde soort in de buurt bloeit. Staan er bij jou of de buren geen andere appel- of perenbomen, kies dan twee verschillende rassen. Zoete Winterkroon en Bloemzoete zijn zelfbestuivend. Bramley’s Seedling is triploïde: hij bestuift zelf slecht en heeft twee andere rassen in de buurt nodig. Twijfel je? Vraag het gerust, dan denk ik mee.</p>
-      </div>
-      <p class="source">De rasbeschrijvingen zijn gebaseerd op <i>Oude fruitrassen in Noord-Nederland</i> van de Noordelijke Pomologische Vereniging (8e druk, 2010).</p>
     </div>
   </section>
 
@@ -921,6 +931,15 @@ if("IntersectionObserver" in window){
   playing=false;sync();show();
   new IntersectionObserver((es,o)=>{if(es[0].isIntersecting&&!started){started=true;playing=!reduce;sync();show();o.disconnect()}},{threshold:.4}).observe(player);
 }else{sync();show()}
+})();
+
+/* menu: actieve sectie markeren */
+(function(){
+  const links=[...document.querySelectorAll('nav.main a:not(.listlink)')];
+  const map=new Map(links.map(a=>[a.getAttribute('href').slice(1),a]));
+  if(!("IntersectionObserver" in window))return;
+  const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.remove('on'));const a=map.get(e.target.id);if(a){a.classList.add('on');const n=a.parentElement;if(n.scrollWidth>n.clientWidth)n.scrollTo({left:a.offsetLeft-24,behavior:'smooth'})}}})},{rootMargin:'-45% 0px -50% 0px'});
+  map.forEach((a,id)=>{const el=document.getElementById(id);if(el)io.observe(el)});
 })();
 
 $("#factCount").textContent=RASSEN.length+" rassen";
